@@ -1,26 +1,29 @@
 <template>
-<div>
-    <h1>Show User</h1>
-    <p>id: {{ userId }} </p>
-    <p>ชื่อ - นามสกุล {{user.name}} - {{user.lastname}}</p>
-    <p>email: {{user.email}} </p>
-    <p>password: {{user.password}}</p>
-</div>
+    <div>
+        <h1>Show User</h1>
+        <p>ID : {{ user.id }} </p>
+        <p>ชื่อ - นามสกุล {{user.name}} - {{user.lastname}}</p>
+        <p>Email : {{user.email}} </p>
+        <p>Password : {{user.password}}</p>
+    </div>
 </template>
 <script>
-import UserService from '@/services/UsersService'
+import UsersService from '@/services/UsersService'
 export default {
-    data(){
-        return{
+    data() {
+        return {
             user: null,
-        };  
+        };
     },
-    async  created(){
-        let userId = this.$route.params.userId;
-        this.user = (await UsersService.show(userId)).data
+    async created() {
+        try {
+            let userId = this.$route.params.userId;
+            this.user = (await UsersService.show(userId)).data
+        } catch (error) {
+            console.log(error);
+        }
     },
 };
-
 </script>
 <style scoped>
 </style>
