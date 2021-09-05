@@ -1,22 +1,22 @@
 <template>
     <div>
-        <h1> Show Blog </h1>
-            <p>id: {{ blog.id }} </p>
-            <p>title: {{ blog.title }} </p>
-            <p>content: {{ blog.content }} </p>
-            <p>category: {{ blog.category }} </p>
-            <p>status: {{ blog.status }} </p>
-            <p>
-                <button v-on:click="navigateTo('/blog/edit/'+blog.id)"> แก้ไขblog </button>
-                <button v-on:click="navigateTo('/blogs')"> กลับ </button>
-            </p>
+        <h1>Show Blog</h1>
+        <p>id : {{ blog.id }}</p>
+        <p>title : {{ blog.title }}</p>
+        <p>content : {{ blog.content }}</p>
+        <p>category : {{ blog.category }}</p>
+        <p>status : {{ blog.status }}</p>
+        <p>
+            <button v-on:click="navigateTo('/blog/edit/'+ blog.id)"> แก้ไข blog</button>
+            <button v-on:click="navigateTo('/blogs')">กลับ</button>
+        </p>
     </div>
 </template>
 <script>
 import BlogsService from '@/services/BlogsService'
 export default {
     data () {
-        return { 
+        return {
             blog: null
         }
     },
@@ -28,10 +28,10 @@ export default {
             console.log (error)
         }
     },
-    methods: {
-       navigateTo (route) {
-           this.$router.push(route)
-       },
+    methods : {
+        navigateTo (route) {
+            this.$router.push(route)
+        },
     }
 }
 </script>

@@ -1,11 +1,10 @@
-import axios from 'axios'
-import store from '@/store'
+import Api from '@/services/Api'
 
-export default() => {
-    return axios.create({
-        baseURL: 'http://localhost:8081',
-        headers: {
-            Authorization: `Bearer ${store.state.token}`
-        }
-    })
+export default {
+    register(credentials) {
+        return Api().post('register', credentials)
+    },
+    login(credentials) {
+        return Api().post('login', credentials)
+    }
 }

@@ -1,13 +1,12 @@
 <template>
     <div>
-        <h1> Create Blog </h1>
+        <h1>Create Blog</h1>
         <form v-on:submit.prevent = "createBlog">
-            <p>title: <input type="text" v-model="blog.title"></p>
-            <p>content: <input type="text" v-model="blog.content"></p>
-            <p>category: <input type="text" v-model="blog.category"></p>
-            <p>status: <input type="text" v-model="blog.status"></p>
-            <p><button type="submit">create blog</button></p>
-
+            <p>title : <input type="text" v-model="blog.title"></p>
+            <p>content : <input type="text" v-model="blog.content"></p>
+            <p>category : <input type="text" v-model="blog.category"></p>
+            <p>status : <input type="text" v-model="blog.status"></p>
+            <p><button type="submit"> create blog </button></p>
         </form>
     </div>
 </template>
@@ -15,7 +14,7 @@
 import BlogsService from '@/services/BlogsService'
 export default {
     data () {
-        return { 
+        return {
             blog: {
                 title: '',
                 thumbnail: 'null',
@@ -39,7 +38,6 @@ export default {
         }
     }
 }
-
 </script>
 <style scoped>
 </style>
